@@ -19,14 +19,14 @@ export class OafDonatePrompt extends LitElement {
       font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
       max-width: 30em;
       background-color: var(--oaf-donate-prompt-background-color, rgb(47, 96, 103));
-      padding: 1.5rem 5rem;
+      padding-bottom: 1.5rem;
     }
 
     .giving_frequency {
       margin: 1.5rem;
       display: flex;
       width: 100%;
-      justify-content: space-around;
+      justify-content: space-between;
 
     }
 
@@ -69,36 +69,22 @@ export class OafDonatePrompt extends LitElement {
     }
 
     .amount_options a:hover {
-      background: rgba(206, 72, 45, 0.75);
-      border: 2px solid white;
-      color: white;
-    }
-
-    h3 {
-      font-size: 22px;
-      margin-bottom: 7px;
-      font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
-      font-weight: 600;
-      color: #fff;
-      display: block;
-      text-align: center;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      transform: scale(1.1);
     }
   `;
 
   private static __monthlyButtons = html`
-    <a href="#">$25</a>
-    <a href="#">$50</a>
-    <a href="#">$75</a>
-    <a href="#">Other</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=7.50">$7.50</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=50">$15</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=30">$30</a>
+    <a href="https://oneacrefund.org/give/recurring/">Other</a>
   `;
 
   private static __oneTimeButtons = html`
-    <a href="#">$50</a>
-    <a href="#">$75</a>
-    <a href="#">$105</a>
-    <a href="#">Other</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=15">$15</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=35">$35</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=75">$75</a>
+    <a href="https://oneacrefund.org/give/one-time/">Other</a>
   `;
   
   @property({type: GIVING_FREQUENCY}) selectedGivingFrequency = GIVING_FREQUENCY.MONTHLY;
@@ -114,10 +100,9 @@ export class OafDonatePrompt extends LitElement {
   render() {
     return html`
       <section class="container">
-        <h3>Make a gift</h3>
         <section class="giving_frequency">
-          <button @click=${this.__selectMonthly} class="${this.selectedGivingFrequency === GIVING_FREQUENCY.MONTHLY ? "active" : ""}">Monthly</button>
-          <button @click=${this.__selectOneTime} class="${this.selectedGivingFrequency === GIVING_FREQUENCY.ONE_TIME ? "active" : ""}">One Time</button>
+          <button @click=${this.__selectMonthly} class="${this.selectedGivingFrequency === GIVING_FREQUENCY.MONTHLY ? "active" : ""}">Recurring Gift</button>
+          <button @click=${this.__selectOneTime} class="${this.selectedGivingFrequency === GIVING_FREQUENCY.ONE_TIME ? "active" : ""}">One-Time Gift</button>
         </section>
         <section class="amount_options">
           ${this.selectedGivingFrequency === GIVING_FREQUENCY.MONTHLY ? OafDonatePrompt.__monthlyButtons : OafDonatePrompt.__oneTimeButtons }
