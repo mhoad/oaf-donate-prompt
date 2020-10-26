@@ -75,7 +75,7 @@ export class OafDonatePrompt extends LitElement {
 
   private static __monthlyButtons = html`
     <a href="https://oneacrefund.org/give/recurring/?amount=7.50">$7.50</a>
-    <a href="https://oneacrefund.org/give/recurring/?amount=50">$15</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=15">$15</a>
     <a href="https://oneacrefund.org/give/recurring/?amount=30">$30</a>
     <a href="https://oneacrefund.org/give/recurring/">Other</a>
   `;
