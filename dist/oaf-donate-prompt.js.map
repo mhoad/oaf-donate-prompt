@@ -1,0 +1,1 @@
+{"version":3,"file":"oaf-donate-prompt.js","sourceRoot":"","sources":["../oaf-donate-prompt.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,0BAA0B,CAAC;AAE3D,MAAM,CAAC,cAAc,CAAC,MAAM,CAAC,mBAAmB,EAAE,eAAe,CAAC,CAAC","sourcesContent":["import { OafDonatePrompt } from './src/OafDonatePrompt.js';\n\nwindow.customElements.define('oaf-donate-prompt', OafDonatePrompt);\n"]}

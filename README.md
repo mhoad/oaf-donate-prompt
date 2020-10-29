@@ -8,13 +8,37 @@ npm i oaf-donate-prompt
 ```
 
 ## Usage
+The following example shows how to load the Web Component from a JS module (can be found in the dist folder) and use it to dynamically replace the existing donate form elements once we have confirmed browser support. Note: Older browsers that (https://caniuse.com/?search=modules)[don't support ES modules] will simply just skip over the tag without any issues.
+
 ```html
 <script type="module">
   import 'oaf-donate-prompt/oaf-donate-prompt.js';
-</script>
 
+  const supportsCustomElements = ('customElements' in window);
+
+  if (supportsCustomElements === true) {
+    // Code for replacing the existing form. Feel free to replace with own solution.
+    try {
+      var formHeading = document.querySelector(".donate-form__item__label ");
+    
+      document.querySelector(".donate-form__item__container").remove();
+      document.querySelector(".donate-form__item--actions").remove();
+      
+      var newForm = document.createElement("oaf-donate-prompt");
+      formHeading.insertAdjacentElement("afterend", newForm);
+    } catch (error) {
+      console.error("Error loading donation web component");
+    }
+  }
+</script>
+```
+
+The element will then be represented in the DOM with the following tag
+```html
 <oaf-donate-prompt></oaf-donate-prompt>
 ```
+
+**Note:** You can also find a precompiled version with slightly better browser support in the dist folder as well if you want to just have a sinlge JS file rather than use the ES module approach outlined above. 
 
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
