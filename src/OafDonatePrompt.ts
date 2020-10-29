@@ -17,7 +17,6 @@ export class OafDonatePrompt extends LitElement {
       flex-direction: column;
       align-items: center;
       font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
-      max-width: 30em;
       background-color: var(--oaf-donate-prompt-background-color, rgb(47, 96, 103));
       padding-bottom: 1.5rem;
     }
@@ -25,9 +24,9 @@ export class OafDonatePrompt extends LitElement {
     .giving_frequency {
       margin: 1.5rem;
       display: flex;
+      flex-direction: column;
       width: 100%;
       justify-content: space-between;
-
     }
 
     .giving_frequency button {
@@ -39,6 +38,7 @@ export class OafDonatePrompt extends LitElement {
       color: white;
       letter-spacing: 2px;
       font-weight: 600;
+      margin-bottom: 1em;
     }
 
     .giving_frequency button.active {
@@ -50,6 +50,7 @@ export class OafDonatePrompt extends LitElement {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .amount_options a {
@@ -66,10 +67,31 @@ export class OafDonatePrompt extends LitElement {
       letter-spacing: 2px;
       border: 2px solid black;
       text-transform: uppercase;
+      flex-grow: 1;
+      margin: 0.5rem;
     }
 
     .amount_options a:hover {
       transform: scale(1.1);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 30em;
+      }
+
+      .giving_frequency {
+        flex-direction: row;
+      }
+
+      .giving_frequency button {
+        margin-bottom: 0;
+      }
+
+      .amount_options a {
+        margin: 0;
+        flex-grow: 0;
+      }
     }
   `;
 
