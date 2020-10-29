@@ -8,7 +8,7 @@ npm i oaf-donate-prompt
 ```
 
 ## Usage
-The following example shows how to load the Web Component from a JS module (can be found in the dist folder) and use it to dynamically replace the existing donate form elements once we have confirmed browser support. Note: Older browsers that (https://caniuse.com/?search=modules)[don't support ES modules] will simply just skip over the tag without any issues.
+The following example shows how to load the Web Component from a JS module (can be found in the dist folder) and use it to dynamically replace the existing donate form elements once we have confirmed browser support. Note: Older browsers that [don't support ES modules](https://caniuse.com/?search=modules) will simply just skip over the tag without any issues.
 
 ```html
 <script type="module">
