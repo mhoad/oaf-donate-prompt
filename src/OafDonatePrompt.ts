@@ -96,16 +96,16 @@ export class OafDonatePrompt extends LitElement {
   `;
 
   private static __monthlyButtons = html`
-    <a href="https://oneacrefund.org/give/recurring/?amount=7.50">$7.50</a>
-    <a href="https://oneacrefund.org/give/recurring/?amount=15">$15</a>
-    <a href="https://oneacrefund.org/give/recurring/?amount=30">$30</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=12.50">$12.50</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=25">$25</a>
+    <a href="https://oneacrefund.org/give/recurring/?amount=55">$55</a>
     <a href="https://oneacrefund.org/give/recurring/">Other</a>
   `;
 
   private static __oneTimeButtons = html`
-    <a href="https://oneacrefund.org/give/one-time/?amount=15">$15</a>
-    <a href="https://oneacrefund.org/give/one-time/?amount=35">$35</a>
-    <a href="https://oneacrefund.org/give/one-time/?amount=75">$75</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=25">$25</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=40">$40</a>
+    <a href="https://oneacrefund.org/give/one-time/?amount=100">$100</a>
     <a href="https://oneacrefund.org/give/one-time/">Other</a>
   `;
   
